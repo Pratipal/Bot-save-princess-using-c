@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+void displayPathtoPrincess(int n, char grid[101][101]){
+       char p;
+    if(grid[0][0]=='p')
+    {
+        for(int i=0;i<(n-1)/2;i++)
+        {
+            printf("UP\nLEFT\n");
+        }
+    }
+    else if(grid[0][n-1]=='p')
+     {
+        for(int i=0;i<(n-1)/2;i++)
+        {
+            printf("UP\nRIGHT\n");
+        }
+}
+    else if(grid[n-1][0]=='p')
+    {
+        for(int i=0;i<(n-1)/2;i++)
+        {
+            printf("DOWN\nLEFT\n");
+        }
+    }
+    else if(grid[n-1][n-1]=='p')
+    {
+        for(int i=0;i<(n-1)/2;i++)
+        {
+          printf("DOWN\nRIGHT\n");
+        }
+    }
+}
+int main(void) {
+
+    int m;
+    scanf("%d", &m);
+    char grid[101][101]={};
+    char line[101];
+
+    for(int i=0; i<m; i++) {
+        scanf("%s", line);
+        strcpy(grid[i], line);
+    }
+    displayPathtoPrincess(m,grid);
+    return 0;
+}
